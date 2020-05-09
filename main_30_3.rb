@@ -14,17 +14,17 @@ temp_input = STDIN.gets.to_i
 matching_clothes = []
 
 items.each do |item|
-	matching_clothes << item if item.check_temp(temp_input) == 1
+	matching_clothes << item if item.check_temp(temp_input) == true
 end
 
 hash = {}
 
 matching_clothes.each do |item|
-	hash[item.get_type] = []
+	hash[item.type] = []
 end
 
 matching_clothes.each do |item|
-	hash[item.get_type] << item
+	hash[item.type] << item
 end
 
 puts
@@ -32,7 +32,7 @@ puts "Ваш прикид на сегодня:"
 puts "*"*50
 
 hash.each do |key, value|
-	puts value.sample.to_s
+	puts value.sample
 end
 
 puts "*"*50

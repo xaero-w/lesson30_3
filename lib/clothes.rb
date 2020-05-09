@@ -1,4 +1,7 @@
 class Clothes
+
+  attr_reader :type
+
   def initialize(title, type, temp)
     @title = title
     @type = type
@@ -6,18 +9,11 @@ class Clothes
   end
 
   def to_s
-    puts "#{@title} (#{@type}) #{@temp.join("..")}"
+    "#{@title} (#{@type}) #{@temp.join("..")}"
   end
 
   def check_temp(out_temp)
-    if out_temp >= @temp[0] && out_temp <= @temp[1]
-      return 1
-    else
-      return 0
-    end
+    (@temp[0]..@temp[1]).include?(out_temp)
   end
 
-  def get_type
-    @type
-  end
 end
