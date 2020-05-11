@@ -1,5 +1,4 @@
 class Clothes
-
   attr_reader :type
 
   def initialize(title, type, temp)
@@ -15,5 +14,4 @@ class Clothes
   def check_temp(out_temp)
     (@temp[0]..@temp[1]).include?(out_temp)
   end
-
 end
